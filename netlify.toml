@@ -1,29 +1,11 @@
 [build]
-  command = "npm run build"
-  publish = "build"
+command = "npm run build"
+publish = "build"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = "/*"
+to = "/index.html"
+status = 200
 
 [build.environment]
-  NODE_VERSION = "18"
-
-# Form handling configuration
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Form notification settings
-[forms]
-  [forms.notifications]
-    email = "p.achyuth6@gmail.com"
-    [forms.notifications.email]
-      from = "Achyuth's Portfolio <forms@achyuth-portfolio.netlify.app>"
-      subject = "New Contact Form Submission"
-      body = "New contact form submission from your portfolio website:\n\nName: {{name}}\nEmail: {{email}}\nSubject: {{subject}}\nMessage: {{message}}\n\nYou can view all submissions in your Netlify dashboard." 
+NODE_VERSION = "18" 
