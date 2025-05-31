@@ -17,4 +17,22 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin" 
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Form notification settings
+[forms]
+  [forms.notifications]
+    email = "p.achyuth6@gmail.com"
+    [forms.notifications.email]
+      from = "Achyuth's Portfolio <forms@achyuth-portfolio.netlify.app>"
+      subject = "New Contact Form Submission"
+      body = """
+      New contact form submission from your portfolio website:
+
+      Name: {{name}}
+      Email: {{email}}
+      Subject: {{subject}}
+      Message: {{message}}
+
+      You can view all submissions in your Netlify dashboard.
+      """ 
