@@ -149,11 +149,29 @@ const IconWrapper = styled.span`
   align-items: center;
 `;
 
+const FormMessage = styled(motion.div)<{ type: 'success' | 'error' }>`
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  background: ${props => props.type === 'success' ? 'rgba(0, 255, 0, 0.1)' : 'rgba(255, 0, 0, 0.1)'};
+  border: 1px solid ${props => props.type === 'success' ? '#00ff00' : '#ff0000'};
+  color: ${props => props.type === 'success' ? '#00ff00' : '#ff0000'};
+  text-align: center;
+`;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
+    message: ''
+  });
+
+  const [formStatus, setFormStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({
+    type: null,
     message: ''
   });
 
@@ -165,9 +183,35 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // Let Netlify handle the form submission
-    // The form will be automatically processed by Netlify
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formData
+        }).toString()
+      });
+
+      if (response.ok) {
+        setFormStatus({
+          type: 'success',
+          message: 'Thank you for your message! I will get back to you soon.'
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      setFormStatus({
+        type: 'error',
+        message: 'Sorry, there was a problem submitting your form. Please try again.'
+      });
+    }
   };
 
   return (
@@ -192,6 +236,17 @@ const Contact = () => {
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
             
+            {formStatus.type && (
+              <FormMessage
+                type={formStatus.type}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {formStatus.message}
+              </FormMessage>
+            )}
+
             <FormGroup>
               <Label htmlFor="name">Name</Label>
               <Input
