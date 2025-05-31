@@ -6,9 +6,11 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 const ProjectsSection = styled.section`
   padding: 2rem 0;
   background: rgba(0, 0, 0, 0.3);
+  scroll-margin-top: 80px;
 
   @media (max-width: 768px) {
     padding: 1.5rem 0;
+    scroll-margin-top: 100px;
   }
 `;
 

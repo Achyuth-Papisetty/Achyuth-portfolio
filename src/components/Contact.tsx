@@ -6,9 +6,11 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 const ContactSection = styled.section`
   padding: 2rem 0;
   position: relative;
+  scroll-margin-top: 80px;
 
   @media (max-width: 768px) {
     padding: 1.5rem 0;
+    scroll-margin-top: 100px;
   }
 `;
 

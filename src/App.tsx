@@ -28,11 +28,13 @@ const Header = styled.header`
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 2rem;
+  height: 60px;
 
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 1rem;
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
+    height: auto;
   }
 `;
 
@@ -74,6 +76,7 @@ const NavLink = styled(motion.a)`
   color: var(--text-primary);
   font-weight: 500;
   position: relative;
+  scroll-behavior: smooth;
 
   &::after {
     content: '';
@@ -95,9 +98,11 @@ const Main = styled.main`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  padding-top: 60px;
 
   @media (max-width: 768px) {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
+    padding-top: 100px;
   }
 `;
 
@@ -109,12 +114,12 @@ const Hero = styled.section`
   align-items: center;
   text-align: center;
   padding: 2rem 0;
-  margin-top: 4rem;
+  margin-top: 2rem;
 
   @media (max-width: 768px) {
     min-height: 80vh;
-    padding: 1rem 0;
-    margin-top: 5rem;
+    padding: 1rem;
+    margin-top: 3rem;
   }
 `;
 
