@@ -183,35 +183,32 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus({ type: null, message: '' });
 
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          ...formData
-        }).toString()
-      });
-
-      if (response.ok) {
+    // Let Netlify handle the form submission
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData as any).toString()
+    })
+      .then(() => {
         setFormStatus({
           type: 'success',
           message: 'Thank you for your message! I will get back to you soon.'
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      setFormStatus({
-        type: 'error',
-        message: 'Sorry, there was a problem submitting your form. Please try again.'
+      })
+      .catch(() => {
+        setFormStatus({
+          type: 'error',
+          message: 'Sorry, there was a problem submitting your form. Please try again.'
+        });
       });
-    }
   };
 
   return (
