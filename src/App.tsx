@@ -28,6 +28,12 @@ const Header = styled.header`
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 6rem;
+  }
 `;
 
 const Logo = styled(motion.h1)`
@@ -38,6 +44,11 @@ const Logo = styled(motion.h1)`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const HeaderProfilePic = styled(motion.img)`
@@ -51,6 +62,12 @@ const HeaderProfilePic = styled(motion.img)`
 const Nav = styled.nav`
   display: flex;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
+  }
 `;
 
 const NavLink = styled(motion.a)`
@@ -77,7 +94,6 @@ const NavLink = styled(motion.a)`
 const Main = styled.main`
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 80px;
   padding: 0 1rem;
 
   @media (max-width: 768px) {
@@ -93,10 +109,12 @@ const Hero = styled.section`
   align-items: center;
   text-align: center;
   padding: 2rem 0;
+  margin-top: 4rem;
 
   @media (max-width: 768px) {
     min-height: 80vh;
     padding: 1rem 0;
+    margin-top: 5rem;
   }
 `;
 
@@ -147,6 +165,7 @@ const ProfileImage = styled(motion.div)`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 20%;
   }
 
   @media (max-width: 768px) {

@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 const ContactSection = styled.section`
-  padding: 4rem 0;
+  padding: 2rem 0;
   position: relative;
 
   @media (max-width: 768px) {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 `;
 
@@ -33,11 +33,11 @@ const SectionTitle = styled(motion.h2)`
 const ContactContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 2rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 `;
 

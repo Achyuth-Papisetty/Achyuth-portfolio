@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectsSection = styled.section`
-  padding: 4rem 0;
+  padding: 2rem 0;
   background: rgba(0, 0, 0, 0.3);
 
   @media (max-width: 768px) {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 `;
 
@@ -33,12 +33,12 @@ const SectionTitle = styled(motion.h2)`
 const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 0 1rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 0 0.5rem;
   }
 `;

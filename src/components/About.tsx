@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const AboutSection = styled.section`
-  padding: 4rem 0;
+  padding: 2rem 0;
   position: relative;
 
   @media (max-width: 768px) {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 `;
 
@@ -31,27 +31,29 @@ const Title = styled(motion.h2)`
 const Content = styled(motion.div)`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
   color: var(--text-primary);
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
+    gap: 3rem;
   }
 `;
 
 const Text = styled.p`
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
 `;
 
 const EducationSection = styled.div`
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 `;
 
 const EducationItem = styled.div`
   margin-bottom: 1.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid var(--neon-primary);
   border-radius: 8px;
   background: rgba(0, 255, 157, 0.05);
@@ -70,13 +72,19 @@ const EducationDetails = styled.p`
 `;
 
 const SkillsSection = styled.div`
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const SkillsList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: flex-start;
 `;
 
 const Skill = styled.span`
