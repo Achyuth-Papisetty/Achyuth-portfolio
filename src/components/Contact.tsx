@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
-import { IconType } from 'react-icons';
 
 const ContactSection = styled.section`
   padding: 6rem 0;

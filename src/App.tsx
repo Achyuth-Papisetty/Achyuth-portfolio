@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import GlobalStyles from './styles/GlobalStyles';
 import { FaGithub, FaLinkedin, FaTwitter, FaDownload } from 'react-icons/fa';
-import { IconType } from 'react-icons';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
