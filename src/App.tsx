@@ -35,6 +35,17 @@ const Logo = styled(motion.h1)`
   font-weight: 700;
   color: var(--neon-primary);
   text-shadow: 0 0 10px var(--neon-primary);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const HeaderProfilePic = styled(motion.img)`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--neon-primary);
+  box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
 `;
 
 const Nav = styled.nav`
@@ -162,7 +173,14 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Achyuth Papisetty
+            <HeaderProfilePic
+              src="/Achyuth Formal pic.png"
+              alt="Achyuth"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            />
+            Achyuth's Portfolio
           </Logo>
           <Nav>
             <NavLink

@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Achyuth's Portfolio",
+  "name": "Achyuth's Portfolio - Full Stack Developer",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "Achyuth Formal pic.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
+      "src": "Achyuth Formal pic.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "Achyuth Formal pic.png",
       "type": "image/png",
       "sizes": "512x512"
     }
