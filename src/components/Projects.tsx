@@ -4,14 +4,22 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectsSection = styled.section`
-  padding: 6rem 0;
+  padding: 4rem 0;
   background: rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+  }
 `;
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const SectionTitle = styled(motion.h2)`
@@ -26,6 +34,13 @@ const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
 `;
 
 const ProjectCard = styled(motion.div)`
@@ -34,6 +49,10 @@ const ProjectCard = styled(motion.div)`
   overflow: hidden;
   border: 1px solid var(--neon-primary);
   box-shadow: 0 0 20px rgba(0, 255, 157, 0.1);
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `;
 
 const ProjectImage = styled.div`

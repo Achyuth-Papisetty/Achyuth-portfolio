@@ -4,14 +4,22 @@ import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 const ContactSection = styled.section`
-  padding: 6rem 0;
+  padding: 4rem 0;
   position: relative;
+
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+  }
 `;
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const SectionTitle = styled(motion.h2)`

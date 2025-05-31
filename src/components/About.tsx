@@ -3,13 +3,22 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const AboutSection = styled.section`
-  padding: 5rem 2rem;
-  background: var(--background-dark);
+  padding: 4rem 0;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+  }
 `;
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const Title = styled(motion.h2)`

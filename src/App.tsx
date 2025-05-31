@@ -78,15 +78,26 @@ const Main = styled.main`
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 80px;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const Hero = styled.section`
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 2rem 0;
+
+  @media (max-width: 768px) {
+    min-height: 80vh;
+    padding: 1rem 0;
+  }
 `;
 
 const Title = styled(motion.h2)`
@@ -136,6 +147,12 @@ const ProfileImage = styled(motion.div)`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+    margin: 2rem auto;
   }
 `;
 
